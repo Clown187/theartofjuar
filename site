@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Art of Juar — Juan J. Espinosa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Pirata+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #d7b56d;
+    --cream: #f3ecd8;
+    --btn-border: #8a4a3a;
+    --btn-border-hover: #c98a6c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    min-height: 100%;
+  }
+  body {
+    color: var(--cream);
+    font-family: 'Cinzel', serif;
+    background: #0a0908;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    filter: brightness(0.55) saturate(0.9);
+    z-index: 0;
+  }
+  .bg-overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8,7,6,0.35) 0%, rgba(8,7,6,0.65) 35%, rgba(6,5,4,0.9) 75%, #06050400 100%),
+                radial-gradient(circle at 50% 0%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%);
+    z-index: 1;
+  }
+  .page {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 56px 24px 40px;
+  }
+  .avatar-ring {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 4px;
+    background: radial-gradient(circle at 35% 30%, #e8c06f, #a8742f 70%);
+    box-shadow: 0 0 24px rgba(215,181,109,0.35);
+  }
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin-top: 26px;
+    text-shadow: 0 0 14px rgba(215,181,109,0.75), 0 0 30px rgba(215,181,109,0.35);
+  }
+  .brand {
+    font-family: 'Pirata One', cursive;
+    font-size: 58px;
+    line-height: 1;
+    color: var(--cream);
+    margin-top: 6px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.55), 0 0 24px rgba(255,255,255,0.25);
+  }
+  .divider {
+    width: 160px;
+    height: 1px;
+    background: rgba(243,236,216,0.6);
+    margin-top: 26px;
+  }
+  .bio {
+    color: rgba(243,236,216,0.75);
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    line-height: 1.7;
+    margin-top: 18px;
+    padding: 0 10px;
+  }
+  .links {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .pill {
+    display: block;
+    width: 100%;
+    padding: 16px 20px;
+    border: 1.5px solid var(--btn-border);
+    border-radius: 999px;
+    color: var(--cream);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(20,14,12,0.25);
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+  }
+  .pill.underline { text-decoration: underline; text-underline-offset: 4px; }
+  .pill:hover {
+    border-color: var(--btn-border-hover);
+    background: rgba(40,20,14,0.4);
+    transform: translateY(-1px);
+  }
+  .management {
+    margin-top: 30px;
+    color: rgba(243,236,216,0.55);
+    font-size: 11.5px;
+    letter-spacing: 0.3px;
+    line-height: 1.8;
+  }
+  .management a {
+    color: rgba(243,236,216,0.55);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .management a:hover { color: var(--gold); }
+  footer {
+    margin-top: 22px;
+    color: rgba(243,236,216,0.4);
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+  @media (max-width: 380px) {
+    .brand { font-size: 46px; }
+    h1 { font-size: 25px; }
+  }
+</style>
+</head>
+<body>
+  <img class="bg" src="https://theartofjuar13.wordpress.com/wp-content/uploads/2025/05/hangininthereprint-large.jpeg" alt="">
+  <div class="bg-overlay"></div>
+
+  <div class="page">
+    <div class="avatar-ring">
+      <img class="avatar" src="https://theartofjuar13.wordpress.com/wp-content/uploads/2025/11/cropped-logo.jpg?w=270" alt="The Art of Juar logo">
+    </div>
+    <h1>Juan J. Espinosa</h1>
+    <div class="brand">The Art of Juar</div>
+    <div class="divider"></div>
+    <p class="bio">Artist exploring identity, culture, mental health, and the human condition.</p>
+
+    <div class="links">
+      <a class="pill" href="https://www.instagram.com/the_art_of_juar/" target="_blank" rel="noopener">Upcoming Show(s)</a>
+      <a class="pill underline" href="https://theartofjuar13.wordpress.com/2025/05/13/beyond-the-obstacle/" target="_blank" rel="noopener">About / Bio</a>
+      <a class="pill underline" href="https://www.instagram.com/the_art_of_juar/" target="_blank" rel="noopener">Instagram</a>
+      <a class="pill underline" href="https://art-of-juar.printify.me/" target="_blank" rel="noopener">Printify</a>
+      <a class="pill underline" href="mailto:juan.espinosa95@live.com,kerseygarza@gmail.com" target="_blank" rel="noopener">Contact</a>
+      <a class="pill underline" href="https://account.venmo.com/u/Juan-Espinosa-13" target="_blank" rel="noopener">Venmo</a>
+    </div>
+
+    <div class="management">
+      Management: Kevin Kersey ·
+      <a href="mailto:kerseygarza@gmail.com">kerseygarza@gmail.com</a> ·
+      <a href="tel:+17608986740">(760) 898-6740</a>
+    </div>
+
+    <footer>The Art of Juar © 2026</footer>
+  </div>
+</body>
+</html>
